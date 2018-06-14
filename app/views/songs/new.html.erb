@@ -3,9 +3,22 @@
 <%= form_for @song  do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
-  <br />
+  <br>
+
+  <%= f.label :artist_name %>
+  <%= f.text_field :artist_name %>
+  <br>
+
+  <label>Genre</label>
+  <%= f.collection_select :genre_id, @genres_list, :name, :name %>
+  <br>
+
+  <label>Note (1)</label>
+  <input id="song_notes_1" name="song[note_contents][]"><br>
+  <label>Note (2)</label>
+  <input id="song_notes_2" name="song[note_contents][]"><br>
+  <label>Note (3)</label>
+  <input id="song_notes_3" name="song[note_contents][]"><br>
 
   <%= f.submit %>
 <% end %>
-
-
